@@ -1,0 +1,40 @@
+{
+    "name": "werepack/repack-for-woocommerce",
+    "description": "Get permission from your customers to reuse already used shipping packaging. As a shop owner it is an easy way to save resources, money and above all to protect the environment.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://werepack.org",
+    "authors": [
+        {
+            "name": "WeRePack Initiative",
+            "email": "hello@werepack.org"
+        },
+        {
+            "name": "Philipp Wellmer",
+            "email": "philipp@ouun.io"
+        }
+    ],
+    "require-dev": {
+        "wp-coding-standards/wpcs": "*",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1"
+    },
+    "scripts": {
+        "lint": [
+            "phpcs --colors --ignore=index.php,vendor,resources,storage,dist --extensions=php --standard=WordPress-Extra ."
+        ],
+        "fix": [
+            "phpcbf -q --ignore=index.php,vendor,resources,storage,dist --extensions=php --standard=WordPress-Extra ."
+        ],
+        "translate": [
+            "wp i18n make-pot . ./languages/repack-for-woocommerce.pot --domain=\"repack-for-woocommerce\" --exclude==\"vendor\""
+        ]
+    },
+    "require": {
+        "ext-json": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
